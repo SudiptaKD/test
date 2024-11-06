@@ -32,8 +32,8 @@ export function ProductCard({ product }: { product: Product }) {
   return (
 
 
-    <div className="group relative shadow-lg rounded-lg overflow-hidden">
-      <div className="relative w-full h-64 bg-gray-200">
+    <div className="group relative shadow-lg rounded-lg overflow-hidden p-1">
+      <div className="relative w-full h-64 bg-gray-200 rounded-lg">
         <Image
           src={product.images[0]}
           alt={product.title}
@@ -90,8 +90,8 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="p-4 bg-white">
         <p className="text-gray-600">{product.brand}</p>
 
-        <h2 className="text-lg font-semibold text-gray-800">{product.title}</h2>
-        <p className="text-gray-600">${product.price}</p>
+        <h2 className="text-lg font-semibold text-gray-800 truncate">{product.title}</h2>
+        <p className="text-blue-600 font-semibold text-lg">${product.price}</p>
       </div>
       {isQuickViewOpen && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center">
