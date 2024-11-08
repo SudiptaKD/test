@@ -1,12 +1,13 @@
 "use client";
 import { Product } from "@/types/types";
 import useCartStore from "@/store/cartStore";
-import { Heart, Eye } from "lucide-react";
+import { Eye } from "lucide-react";
 import { useState } from "react";
 import { QuickViewModal } from "./QuickViewModal";
 import { CartButtons } from "./CartButtons";
 import { ProductImage } from "./ProductImage";
 import Button from "@/components/ui/button";
+import FavoriteButton from "@/components/FavouriteButton";
 
 export function ProductCard({ product }: { product: Product }) {
   const { addToCart, items, removeFromCart, setQty } = useCartStore((state) => state);
@@ -21,10 +22,9 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <div className="group relative shadow-lg rounded-lg overflow-hidden p-1">
       <ProductImage src={product.images[0]} alt={product.title}>
-        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <Button className="p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full">
-            <Heart className="w-6 h-6" />
-          </Button>        </div>
+        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 z-10 transition-opacity duration-300">
+          <FavoriteButton product={product} />
+        </div>
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 opacity-0 group-hover:opacity-100 bg-black bg-opacity-40 transition-opacity duration-300">
           <CartButtons
             cartItem={cartItem}
