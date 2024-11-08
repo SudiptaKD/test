@@ -25,7 +25,7 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 z-10 transition-opacity duration-300">
           <FavoriteButton product={product} />
         </div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 opacity-0 group-hover:opacity-100 bg-black bg-opacity-40 transition-opacity duration-300">
+        <div className="absolute inset-0 flex flex-col rounded-lg items-center justify-center gap-2 opacity-0 group-hover:opacity-100 bg-black bg-opacity-40 transition-opacity duration-300">
           <CartButtons
             cartItem={cartItem}
             onAdd={() => addToCart(product)}
