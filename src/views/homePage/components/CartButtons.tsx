@@ -16,7 +16,7 @@ export function CartButtons({
       <button onClick={onRemove} className="px-2 py-2 text-sm bg-green-600 hover:bg-green-700 rounded-l-lg">
         <Trash2 />
       </button>
-      <p className="text-sm py-2 font-bold">{cartItem.quantity} Added in Cart</p>
+      <p className="text-sm py-3 font-bold">{cartItem.quantity} Added in Cart</p>
       <button
         onClick={() => onUpdateQuantity(cartItem.quantity + 1)}
         className="px-3 py-2 text-sm bg-green-600 hover:bg-green-700 rounded-r-lg"
