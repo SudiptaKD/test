@@ -19,7 +19,7 @@ export function CartButtons({
       <Button variant={buttonVarient || "primary"} onClick={onRemove} className="px-1 py-2 text-sm bg-green-600 hover:bg-green-700 rounded-l-lg">
         <Trash2 />
       </Button>
-      <p className="text-sm py-3 font-semibold">{cartItem.quantity} Added in Cart</p>
+      <p className="text-sm py-3 ">{cartItem.quantity} Added in Cart</p>
       <Button
         variant={buttonVarient || "primary"}
         onClick={() => onUpdateQuantity(cartItem.quantity + 1)}
