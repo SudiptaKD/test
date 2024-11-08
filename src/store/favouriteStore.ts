@@ -1,4 +1,3 @@
-// store/favoriteStore.ts
 import {create} from 'zustand';
 import { Product } from '@/types/types';
 import toast from 'react-hot-toast';
