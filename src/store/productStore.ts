@@ -1,4 +1,3 @@
-// src/store.js
 import { create } from 'zustand';
 import { Product } from '@/types/types';
 

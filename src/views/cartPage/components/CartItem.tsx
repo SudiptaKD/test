@@ -1,8 +1,9 @@
-import { CartItem as CartItemType } from "@/types/types"; // Ensure this points to your actual types
 import useCartStore from "@/store/cartStore";
 import Image from "next/image";
+import { CartItemType } from "@/types/types";
+import Button from "@/components/ui/button";
 
-export default function CartItem({ item }: { item: CartItemType }) {
+export default function CartItem({ item }: {item :CartItemType}) {
   const { removeFromCart, updateQty } = useCartStore((state) => state);
 
   return (
@@ -18,27 +19,18 @@ export default function CartItem({ item }: { item: CartItemType }) {
         <h2 className="text-lg font-semibold text-black">{item.title}</h2>
         <p className="text-gray-600">${item.price.toFixed(2)}</p>
         <div className="flex items-center mt-2">
-          <button
-            onClick={() => updateQty("decrement", item.id)}
-            className="px-2 py-1 border rounded-l text-black"
-          >
+          <Button onClick={() => updateQty("decrement", item.id)} variant="secondary">
             -
-          </button>
+          </Button>
           <span className="mx-2 text-black font-semibold">{item.quantity}</span>
-          <button
-            onClick={() => updateQty("increment", item.id)}
-            className="px-2 py-1 border rounded-r text-black"
-          >
+          <Button onClick={() => updateQty("increment", item.id)} variant="secondary">
             +
-          </button>
+          </Button>
         </div>
       </div>
-      <button
-        className="text-red-500 ml-4 hover:underline"
-        onClick={() => removeFromCart(item.id)}
-      >
+      <Button onClick={() => removeFromCart(item.id)} variant="danger" className="ml-4">
         Remove
-      </button>
+      </Button>
     </div>
   );
 }

@@ -1,8 +1,9 @@
-import { CartItem as CartItemType } from "@/types/types";
+import { CartItemType } from "@/types/types";
+import Button from "@/components/ui/button";
 
-export default function OrderSummary({ items }: { items: CartItemType[] }) {
+export default function OrderSummary({ items } : {items : CartItemType[]}) {
   const subtotal = items.reduce((total, item) => total + item.price * item.quantity, 0);
-  
+
   return (
     <div className="bg-white p-6 rounded-lg shadow">
       <h2 className="text-xl font-semibold text-black mb-4">Order Summary</h2>
@@ -14,9 +15,10 @@ export default function OrderSummary({ items }: { items: CartItemType[] }) {
         <span>Total</span>
         <span>${subtotal.toFixed(2)}</span>
       </div>
-      <button className="w-full mt-6 py-2 text-white bg-green-600 rounded-lg hover:bg-green-700">
+      <Button fullWidth variant="primary" className="mt-6">
         Proceed to Checkout
-      </button>
+      </Button>
     </div>
   );
 }
+
