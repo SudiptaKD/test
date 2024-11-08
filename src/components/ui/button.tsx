@@ -4,6 +4,7 @@ import clsx from "clsx";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "danger" | "glass";
   fullWidth?: boolean;
+  baseStyle?: boolean;
   icon?: ReactNode;
   children: ReactNode;
   className?: string;
@@ -12,12 +13,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export default function Button({
   variant = "primary",
   fullWidth = false,
+  baseStyle = true,
   icon,
   children,
   className,
   ...props
 }: ButtonProps) {
-  const baseStyles = "px-4 py-2 rounded-lg font-semibold transition";
+  const baseStyles = baseStyle ? "px-4 py-2 rounded-lg font-semibold transition" : "";
 
   const variantStyles = {
     primary: "bg-green-600 text-white hover:bg-green-700",
