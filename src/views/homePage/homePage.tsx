@@ -1,5 +1,5 @@
 "use client"
-import { ProductCard } from "@/components/product-card";
+import { ProductCard } from "@/components/ProductCard";
 import useProductStore from "@/store/productStore";
 import { Product } from "@/types/types";
 import { useEffect } from "react";
